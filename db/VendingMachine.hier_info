@@ -1,0 +1,279 @@
+|VendingMachine
+Clk => Clk.IN4
+nRst => nRst.IN4
+button1 => button1.IN1
+button2 => button2.IN1
+switch => credits.OUTPUTSELECT
+switch => credits.OUTPUTSELECT
+switch => credits.OUTPUTSELECT
+switch => credits.OUTPUTSELECT
+switch => credits.OUTPUTSELECT
+switch => credits.OUTPUTSELECT
+switch => credits.OUTPUTSELECT
+switch => credits.OUTPUTSELECT
+switch => credits.OUTPUTSELECT
+switch => credits.OUTPUTSELECT
+switch => credits.OUTPUTSELECT
+switch => credits.OUTPUTSELECT
+switch => credits.OUTPUTSELECT
+switch => credits.OUTPUTSELECT
+switch => credits.OUTPUTSELECT
+switch => credits.OUTPUTSELECT
+led1 <= led1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+led2 <= led2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg1[0] <= SevenSegDecoder:seven_seg1.segments
+seg1[1] <= SevenSegDecoder:seven_seg1.segments
+seg1[2] <= SevenSegDecoder:seven_seg1.segments
+seg1[3] <= SevenSegDecoder:seven_seg1.segments
+seg1[4] <= SevenSegDecoder:seven_seg1.segments
+seg1[5] <= SevenSegDecoder:seven_seg1.segments
+seg1[6] <= SevenSegDecoder:seven_seg1.segments
+seg2[0] <= SevenSegDecoder:seven_seg2.segments
+seg2[1] <= SevenSegDecoder:seven_seg2.segments
+seg2[2] <= SevenSegDecoder:seven_seg2.segments
+seg2[3] <= SevenSegDecoder:seven_seg2.segments
+seg2[4] <= SevenSegDecoder:seven_seg2.segments
+seg2[5] <= SevenSegDecoder:seven_seg2.segments
+seg2[6] <= SevenSegDecoder:seven_seg2.segments
+seg3[0] <= SevenSegDecoder:seven_seg3.segments
+seg3[1] <= SevenSegDecoder:seven_seg3.segments
+seg3[2] <= SevenSegDecoder:seven_seg3.segments
+seg3[3] <= SevenSegDecoder:seven_seg3.segments
+seg3[4] <= SevenSegDecoder:seven_seg3.segments
+seg3[5] <= SevenSegDecoder:seven_seg3.segments
+seg3[6] <= SevenSegDecoder:seven_seg3.segments
+seg4[0] <= SevenSegDecoder:seven_seg4.segments
+seg4[1] <= SevenSegDecoder:seven_seg4.segments
+seg4[2] <= SevenSegDecoder:seven_seg4.segments
+seg4[3] <= SevenSegDecoder:seven_seg4.segments
+seg4[4] <= SevenSegDecoder:seven_seg4.segments
+seg4[5] <= SevenSegDecoder:seven_seg4.segments
+seg4[6] <= SevenSegDecoder:seven_seg4.segments
+
+
+|VendingMachine|debounce:debounce_button1
+Clk => ButtonOut~reg0.CLK
+Clk => stable_state.CLK
+Clk => counter[0].CLK
+Clk => counter[1].CLK
+Clk => counter[2].CLK
+Clk => counter[3].CLK
+Clk => counter[4].CLK
+Clk => counter[5].CLK
+Clk => counter[6].CLK
+Clk => counter[7].CLK
+Clk => counter[8].CLK
+Clk => counter[9].CLK
+Clk => counter[10].CLK
+Clk => counter[11].CLK
+Clk => counter[12].CLK
+Clk => counter[13].CLK
+Clk => counter[14].CLK
+Clk => counter[15].CLK
+Clk => counter[16].CLK
+Clk => counter[17].CLK
+Clk => counter[18].CLK
+Clk => counter[19].CLK
+Clk => counter[20].CLK
+Clk => counter[21].CLK
+Clk => counter[22].CLK
+Clk => counter[23].CLK
+Clk => counter[24].CLK
+Clk => counter[25].CLK
+Clk => counter[26].CLK
+Clk => counter[27].CLK
+Clk => counter[28].CLK
+Clk => counter[29].CLK
+Clk => counter[30].CLK
+Clk => counter[31].CLK
+nRst => ButtonOut~reg0.PRESET
+nRst => stable_state.PRESET
+nRst => counter[0].ACLR
+nRst => counter[1].ACLR
+nRst => counter[2].ACLR
+nRst => counter[3].ACLR
+nRst => counter[4].ACLR
+nRst => counter[5].ACLR
+nRst => counter[6].ACLR
+nRst => counter[7].ACLR
+nRst => counter[8].ACLR
+nRst => counter[9].ACLR
+nRst => counter[10].ACLR
+nRst => counter[11].ACLR
+nRst => counter[12].ACLR
+nRst => counter[13].ACLR
+nRst => counter[14].ACLR
+nRst => counter[15].ACLR
+nRst => counter[16].ACLR
+nRst => counter[17].ACLR
+nRst => counter[18].ACLR
+nRst => counter[19].ACLR
+nRst => counter[20].ACLR
+nRst => counter[21].ACLR
+nRst => counter[22].ACLR
+nRst => counter[23].ACLR
+nRst => counter[24].ACLR
+nRst => counter[25].ACLR
+nRst => counter[26].ACLR
+nRst => counter[27].ACLR
+nRst => counter[28].ACLR
+nRst => counter[29].ACLR
+nRst => counter[30].ACLR
+nRst => counter[31].ACLR
+ButtonIn => always0.IN1
+ButtonIn => ButtonOut.DATAA
+ButtonIn => stable_state.DATAIN
+ButtonOut <= ButtonOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|VendingMachine|debounce:debounce_button2
+Clk => ButtonOut~reg0.CLK
+Clk => stable_state.CLK
+Clk => counter[0].CLK
+Clk => counter[1].CLK
+Clk => counter[2].CLK
+Clk => counter[3].CLK
+Clk => counter[4].CLK
+Clk => counter[5].CLK
+Clk => counter[6].CLK
+Clk => counter[7].CLK
+Clk => counter[8].CLK
+Clk => counter[9].CLK
+Clk => counter[10].CLK
+Clk => counter[11].CLK
+Clk => counter[12].CLK
+Clk => counter[13].CLK
+Clk => counter[14].CLK
+Clk => counter[15].CLK
+Clk => counter[16].CLK
+Clk => counter[17].CLK
+Clk => counter[18].CLK
+Clk => counter[19].CLK
+Clk => counter[20].CLK
+Clk => counter[21].CLK
+Clk => counter[22].CLK
+Clk => counter[23].CLK
+Clk => counter[24].CLK
+Clk => counter[25].CLK
+Clk => counter[26].CLK
+Clk => counter[27].CLK
+Clk => counter[28].CLK
+Clk => counter[29].CLK
+Clk => counter[30].CLK
+Clk => counter[31].CLK
+nRst => ButtonOut~reg0.PRESET
+nRst => stable_state.PRESET
+nRst => counter[0].ACLR
+nRst => counter[1].ACLR
+nRst => counter[2].ACLR
+nRst => counter[3].ACLR
+nRst => counter[4].ACLR
+nRst => counter[5].ACLR
+nRst => counter[6].ACLR
+nRst => counter[7].ACLR
+nRst => counter[8].ACLR
+nRst => counter[9].ACLR
+nRst => counter[10].ACLR
+nRst => counter[11].ACLR
+nRst => counter[12].ACLR
+nRst => counter[13].ACLR
+nRst => counter[14].ACLR
+nRst => counter[15].ACLR
+nRst => counter[16].ACLR
+nRst => counter[17].ACLR
+nRst => counter[18].ACLR
+nRst => counter[19].ACLR
+nRst => counter[20].ACLR
+nRst => counter[21].ACLR
+nRst => counter[22].ACLR
+nRst => counter[23].ACLR
+nRst => counter[24].ACLR
+nRst => counter[25].ACLR
+nRst => counter[26].ACLR
+nRst => counter[27].ACLR
+nRst => counter[28].ACLR
+nRst => counter[29].ACLR
+nRst => counter[30].ACLR
+nRst => counter[31].ACLR
+ButtonIn => always0.IN1
+ButtonIn => ButtonOut.DATAA
+ButtonIn => stable_state.DATAIN
+ButtonOut <= ButtonOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|VendingMachine|edge_detector:edge_detector_button1
+Clk => PulseOut~reg0.CLK
+Clk => SignalIn_d.CLK
+nRst => PulseOut~reg0.ACLR
+nRst => SignalIn_d.PRESET
+SignalIn => SignalIn_d.DATAIN
+SignalIn => PulseOut.IN1
+PulseOut <= PulseOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|VendingMachine|edge_detector:edge_detector_button2
+Clk => PulseOut~reg0.CLK
+Clk => SignalIn_d.CLK
+nRst => PulseOut~reg0.ACLR
+nRst => SignalIn_d.PRESET
+SignalIn => SignalIn_d.DATAIN
+SignalIn => PulseOut.IN1
+PulseOut <= PulseOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|VendingMachine|SevenSegDecoder:seven_seg1
+digit[0] => Decoder0.IN3
+digit[1] => Decoder0.IN2
+digit[2] => Decoder0.IN1
+digit[3] => Decoder0.IN0
+segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|VendingMachine|SevenSegDecoder:seven_seg2
+digit[0] => Decoder0.IN3
+digit[1] => Decoder0.IN2
+digit[2] => Decoder0.IN1
+digit[3] => Decoder0.IN0
+segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|VendingMachine|SevenSegDecoder:seven_seg3
+digit[0] => Decoder0.IN3
+digit[1] => Decoder0.IN2
+digit[2] => Decoder0.IN1
+digit[3] => Decoder0.IN0
+segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|VendingMachine|SevenSegDecoder:seven_seg4
+digit[0] => Decoder0.IN3
+digit[1] => Decoder0.IN2
+digit[2] => Decoder0.IN1
+digit[3] => Decoder0.IN0
+segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

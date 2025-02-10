@@ -1,0 +1,63 @@
+module lighting_system (
+    input clk,               // Input clock signal (e.g., 50 MHz)
+    input rst,               // Reset signal
+    input button1,           // Button 1
+    input button2,           // Button 2
+    input switch,            // Switch for credit increment
+    output reg led1,         // LED 1 output
+    output reg led2,         // LED 2 output
+    output [6:0] seg1,       // 7-segment display 1
+    output [6:0] seg2,       // 7-segment display 2
+    output [6:0] seg3,       // 7-segment display 3
+    output [6:0] seg4        // 7-segment display 4
+);
+
+    // Internal Signals
+    wire clk_1hz; // 1 Hz clock signal from clock divider
+
+    // Instantiate the clock divider
+    clock_divider #(
+        .CLK_FREQ(50_000_000), // Input clock frequency
+        .TARGET_FREQ(1)        // Target frequency
+    ) clk_div_inst (
+        .clk_in(clk),
+        .rst(rst),
+        .clk_out(clk_1hz)
+    );
+
+    // The rest of the logic remains the same, but use `clk_1hz` for timing
+    // instead of the main `clk`.
+
+    // Example: Replace the timer and credit logic to use clk_1hz.
+    reg [15:0] credits;
+    reg [31:0] credit_timer;
+
+    always @(posedge clk_1hz or posedge rst) begin
+        if (rst) begin
+            credits <= 0;
+            led1 <= 0;
+            led2 <= 0;
+        end else begin
+            // Credit Increment
+            if (switch) begin
+                credits <= credits + 5;
+            end
+
+            // Button and LED Logic
+            if (button1 && credits >= 100) begin
+                led1 <= 1;
+                credits <= credits - 100;
+            end else begin
+                led1 <= 0;
+            end
+
+            if (button2 && credits >= 100) begin
+                led2 <= 1;
+                credits <= credits - 100;
+            end else begin
+                led2 <= 0;
+            end
+        end
+    end
+
+endmodule
